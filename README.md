@@ -1,5 +1,16 @@
 # Student Management System (CLI)
 
+---
+
+## 📌 Project Description
+
+A command-line based **Student Management System** built in Python.
+
+This project focuses on implementing CRUD operations using Python fundamentals such as functions, lists, dictionaries, loops, conditional statements, and modular programming practices.
+
+---
+
+
 # Project Structure
 Student-Management-System/
 │
@@ -12,17 +23,15 @@ Student-Management-System/
 │
 └── screenshots/
 
-## 📌 Project Description
 
-A command-line based Student Management System built in Python.
 
 ## 🚀 Features
 
 - [✅] Project Initialization
 - [✅] Dynamic Menu
 - [✅] Add Student
-- [ ] View Students
-- [ ] Search Student
+- [✅] View Students
+- [✅] Search Student
 - [ ] Update Student
 - [ ] Delete Student
 - [ ] Grade Calculation
@@ -52,12 +61,20 @@ Completed:
 - Menu System
 - Add Student
 - Duplicate ID Validation
-
-Remaining:
 - View Student
 - Search Student
+
+Remaining:
 - Update Student
 - Delete Student
 - Grade Calculation
 - Topper
 - File Handling
+
+
+
+
+
+
+---
+

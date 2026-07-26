@@ -30,28 +30,29 @@ def menu():
     print(f" {index}:{options}")
 
 
-# students = [
-#     {"id":101, "name":"kamal", "age":22, "marks":90},
-#     {"id":102, "name":"kamalpreet", "age":26, "marks":90},
-# ]
 
 
-def check_student_id(Id):
+# def check_student_id(Id):
+#     for student in students:
+#         if student["id"] == Id:
+            
+#             return True
+        
+
+#     return False
+
+
+def get_student_by_id(Id):
     for student in students:
         if student["id"] == Id:
-            
-            return True
-        
+            return student
 
-    return False
+    return None
     
-def add_student():
-
-        
-     
+def add_student():   
  while True:
     Id = int(input("Enter student id: "))
-    found = check_student_id(Id) 
+    found = get_student_by_id(Id) 
      
     if found:
         print("This student is already avaliable")
@@ -91,6 +92,26 @@ def view_student():
             print(f"Course : {student['course']}")
             print(f"Marks : {student['marks']}")
             print("--------------------------")
+
+
+
+
+def search_student():
+    Id = int(input("Enter student id: "))
+    student = get_student_by_id(Id) 
+    
+    if found:
+     print("-----------------------")
+     print(f"ID     : {student['id']}")
+     print(f"Name   : {student['name']}")
+     print(f"Age    : {student['age']}")
+     print(f"Course : {student['course']}")
+     print(f"Marks  : {student['marks']}")
+     print("-----------------------")
+     
+    else:
+        print("This student is not available")    
+
 
 
 def main():
