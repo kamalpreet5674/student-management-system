@@ -32,15 +32,6 @@ def menu():
 
 
 
-# def check_student_id(Id):
-#     for student in students:
-#         if student["id"] == Id:
-            
-#             return True
-        
-
-#     return False
-
 
 def get_student_by_id(Id):
     for student in students:
