@@ -18,9 +18,9 @@ A command-line based Student Management System built in Python.
 
 ## 🚀 Features
 
-- [x] Project Initialization
-- [x] Dynamic Menu
-- [ ] Add Student
+- [✅] Project Initialization
+- [✅] Dynamic Menu
+- [✅] Add Student
 - [ ] View Students
 - [ ] Search Student
 - [ ] Update Student
@@ -47,8 +47,17 @@ Student-Management-System/
 
 ## 📅 Progress
 
-Day 5
+Completed:
+- Project Structure
+- Menu System
+- Add Student
+- Duplicate ID Validation
 
-- Project Initialization ✅
-- Folder Creation ✅
-- Dynamic Menu ✅
+Remaining:
+- View Student
+- Search Student
+- Update Student
+- Delete Student
+- Grade Calculation
+- Topper
+- File Handling

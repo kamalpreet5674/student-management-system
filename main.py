@@ -1,4 +1,5 @@
-import os 
+import os
+ 
 students = []
 
 def create_folder():  # for folder creation 
@@ -27,6 +28,54 @@ def menu():
  
  for index, options in enumerate(menu_options,start = 1):
     print(f" {index}:{options}")
+
+
+# students = [
+#     {"id":101, "name":"kamal", "age":22, "marks":90},
+#     {"id":102, "name":"kamalpreet", "age":26, "marks":90},
+# ]
+
+
+def check_student_id(Id):
+    for student in students:
+        if student["id"] == Id:
+            
+            return True
+        
+
+    return False
+    
+def add_student():
+
+        
+     
+ while True:
+    Id = int(input("Enter student id: "))
+    found = check_student_id(Id) 
+     
+    if found:
+        print("This student is already avaliable")
+        continue
+    
+    if not found:
+      name = input("Enter the name of student:")
+      age = int(input("Enter the age of student:"))
+      course = input("Enter the couse of student:")
+      marks = float(input("Enter the marks of student:"))
+      student = {
+         "id": Id,
+         "name": name,
+         "age": age,
+         "course": course,
+         "marks": marks
+     }
+      students.append(student)
+      print(students)
+      print("Student added successfully")
+      return
+   
+
+
 
 
 def main():
@@ -70,25 +119,6 @@ def main():
             print("Invalid input. Please enter a valid number.")
 
 
-main()
+if __name__ == "__main__":
+    main()
 
-# def add_student():
-#     pass
-
-# def view_student():
-#     pass
-
-# def search_student():
-#     pass
-
-# def update_student():
-#     pass
-
-# def delete_student():
-#     pass
-
-# def calculate_grade():
-#     pass
-
-# def find_topper():
-#     pass
