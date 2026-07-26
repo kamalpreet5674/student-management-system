@@ -75,7 +75,22 @@ def add_student():
       return
    
 
-
+def view_student():
+    if not students:
+        print("--------------------------")
+        print("List khali aa mama")
+        print("--------------------------")
+        return
+    if students:
+        for index, student in enumerate(students, start=1):
+            print("--------------------------")
+            print(f" Student {index}")
+            print(f"ID : {student['id']}")
+            print(f"Name : {student['name']}")
+            print(f"Age : {student['age']}")
+            print(f"Course : {student['course']}")
+            print(f"Marks : {student['marks']}")
+            print("--------------------------")
 
 
 def main():
