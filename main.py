@@ -1,6 +1,28 @@
 import os
  
-students = []
+students = [
+    {
+        "id": 101,
+        "name": "Kamal",
+        "age": 22,
+        "course": "Python",
+        "marks": 90
+    },
+    {
+        "id": 102,
+        "name": "Ali",
+        "age": 20,
+        "course": "Java",
+        "marks": 85
+    },
+    {
+        "id": 103,
+        "name": "Ali kumar",
+        "age": 20,
+        "course": "Javascript",
+        "marks": 85
+    }
+]
 
 def create_folder():  # for folder creation 
     if not os.path.exists("student_data"):
@@ -89,9 +111,38 @@ def view_student():
 
 def search_student():
     Id = int(input("Enter student id: "))
-    student = get_student_by_id(Id) 
+    found = get_student_by_id(Id) 
     
     if found:
+     print("-----------------------")
+     print(f"ID     : {found['id']}")
+     print(f"Name   : {found['name']}")
+     print(f"Age    : {found['age']}")
+     print(f"Course : {found['course']}")
+     print(f"Marks  : {found['marks']}")
+     print("-----------------------")
+     
+    else:
+        print("This student is not available")    
+
+
+
+def update_student():
+    Id = int(input("Enter student id: "))
+    student = get_student_by_id(Id) 
+     
+    if student:
+      
+     name = input("Enter new name : ")
+     age = int(input("Enter new age : "))
+     course = input("Enter new course : ")
+     marks = float(input("Enter new marks : "))
+     
+     student["name"] = name
+     student["age"] = age
+     student["course"] = course
+     student["marks"] = marks
+    
      print("-----------------------")
      print(f"ID     : {student['id']}")
      print(f"Name   : {student['name']}")
@@ -100,10 +151,37 @@ def search_student():
      print(f"Marks  : {student['marks']}")
      print("-----------------------")
      
+     print("Student updated succesfully")
+  
     else:
-        print("This student is not available")    
+        print("This student is not available")
+        
+    
 
 
+         
+def delete_student():
+    Id = int(input("Enter student id: "))
+
+    student = get_student_by_id(Id)
+
+    if not student:
+        print("Student not found.")
+        return
+
+    confirm = input("Are you sure? (Y/N): ").lower()
+
+    if confirm == "y":
+        students.remove(student)
+        print("Student deleted successfully.")
+
+    elif confirm == "n":
+        print("Deletion cancelled.")
+
+    else:
+        print("Invalid input.")    
+        
+        
 
 def main():
     create_folder()
