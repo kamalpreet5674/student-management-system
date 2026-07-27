@@ -32,8 +32,8 @@ Student-Management-System/
 - [✅] Add Student
 - [✅] View Students
 - [✅] Search Student
-- [ ] Update Student
-- [ ] Delete Student
+- [✅] Update Student
+- [✅] Delete Student
 - [ ] Grade Calculation
 - [ ] Find Topper
 - [ ] File Storage
@@ -63,10 +63,10 @@ Completed:
 - Duplicate ID Validation
 - View Student
 - Search Student
-
-Remaining:
 - Update Student
 - Delete Student
+
+Remaining:
 - Grade Calculation
 - Topper
 - File Handling
