@@ -6,7 +6,7 @@ students = [
         "name": "Kamal",
         "age": 22,
         "course": "Python",
-        "marks": 90
+        "marks": 95
     },
     {
         "id": 102,
@@ -181,7 +181,77 @@ def delete_student():
     else:
         print("Invalid input.")    
         
-        
+ 
+ 
+
+def calculate_grade(marks):
+
+    if marks >= 90:
+        return "A+"
+
+    elif marks >= 80:
+        return "A"
+
+    elif marks >= 70:
+        return "B"
+
+    elif marks >= 60:
+        return "C"
+
+    elif marks >= 50:
+        return "D"
+
+    else:
+        return "F"
+
+
+def student_grade():
+    Id = int(input("Enter student id: "))
+
+    student = get_student_by_id(Id)
+
+    if not student:
+        print("Student not found.")
+        return
+
+    grade = calculate_grade(student["marks"])
+
+    print("-----------------------")
+    print(f"ID     : {student['id']}")
+    print(f"Name   : {student['name']}")
+    print(f"Marks  : {student['marks']}")
+    print(f"Grade  : {grade}")
+    print("-----------------------")
+    
+  
+  
+
+def find_topper():
+    if not students:
+        print("--------------------------")
+        print("No students available.")
+        print("--------------------------")
+        return
+
+    topper = students[0]
+
+    for student in students:
+        if student["marks"] > topper["marks"]:
+            topper = student
+
+    grade = calculate_grade(topper["marks"])
+
+    print("--------------------------")
+    print("Topper Details")
+    print("--------------------------")
+    print(f"ID     : {topper['id']}")
+    print(f"Name   : {topper['name']}")
+    print(f"Age    : {topper['age']}")
+    print(f"Course : {topper['course']}")
+    print(f"Marks  : {topper['marks']}")
+    print(f"Grade  : {grade}")
+    print("--------------------------")
+                
 
 def main():
     create_folder()
@@ -208,7 +278,7 @@ def main():
                 delete_student()
 
             elif choice == 6:
-                calculate_grade()
+                student_grade()
 
             elif choice == 7:
                 find_topper()
@@ -222,6 +292,10 @@ def main():
 
         except ValueError:
             print("Invalid input. Please enter a valid number.")
+            
+            
+
+            
 
 
 if __name__ == "__main__":
